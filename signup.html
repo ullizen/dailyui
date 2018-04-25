@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign up</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<style type="text/css">
+		html, body {
+			height: 100%
+		}
+		body {
+			margin: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-family: 'Open Sans', sans-serif;
+			background: linear-gradient(to right, #ecbbbb, #f4d4c2);
+		}
+
+		.main {
+			width: 100%;
+			max-width: 450px;
+		}
+
+		.log-in {
+			display: flex;
+			flex-direction: column;
+			padding: 30px 40px;
+			background: rgba(255,255,255,0.7);
+			border-radius: 5px;
+
+		}
+
+		input {
+			border: none;
+			padding: 10px;
+			font-family: inherit;
+			font-size: inherit;
+			margin-top: 10px;
+			max-width: 100%;
+		}
+
+		input[type="checkbox" i]{
+			border: 2px solid green;
+		}
+
+		button {
+			border: none;
+			background: #da5562;
+			color: white;
+			padding: 10px;
+			margin-top: 30px;
+			font-family: inherit;
+			font-weight: bold;
+			text-transform: uppercase;
+			border-radius: 5px;
+		}
+
+		.input2-theme4 {
+			border-radius: 2px;
+			padding: 10px 20px;
+			border: none;
+			border-bottom: 5px solid #ddd;
+			box-shadow: 0 2px 4px rgba(0,0,0,0.1), 0 2px 3px rgba(0,0,0,0.33);
+			transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+		}
+
+		.input2-theme4:hover {
+			box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+		}
+
+		.input2-theme4:focus{
+			outline: none;
+			border-color: #da5562;
+		}
+
+		.input2-theme4::placeholder {
+		    color: #bbb;
+		    opacity: 1;
+		}
+
+		.checkbox-wrapper {
+			margin-top: 10px;
+		}
+
+		#checkbox {
+			margin-right: 10px;
+			margin-left: 10px;
+			position: relative;
+		}
+
+		#checkbox::before {
+			opacity: 1;
+			position: absolute;
+			top: -4px;
+			right: 0;
+			content: '';
+			height: 20px;
+			width: 20px;
+			border-radius: 5px;
+			border: 1px solid #ddd;
+			border-bottom: 1px solid #bbb;
+			border-top: none;
+			background: white;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="log-in">
+		<input class="input2-theme4" type="text" name="email" placeholder="email">
+		<input class="input2-theme4" type="password" name="password" placeholder="password">
+		<div class="checkbox-wrapper"><input id="checkbox" type="checkbox"><label for="checkbox">Yes, I'll donate everything I own</label></div>
+		<button>Sign up</button>
+		</div>
+	</div>
+</body>
+</html>
