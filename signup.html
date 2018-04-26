@@ -4,6 +4,7 @@
 	<title>Sign up</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<style type="text/css">
 		html, body {
 			height: 100%
@@ -46,7 +47,7 @@
 
 		button {
 			border: none;
-			background: #da5562;
+			background: #dc425b;
 			color: white;
 			padding: 10px;
 			margin-top: 30px;
@@ -71,7 +72,7 @@
 
 		.input2-theme4:focus{
 			outline: none;
-			border-color: #da5562;
+			border-color: #dc425b;
 		}
 
 		.input2-theme4::placeholder {
@@ -102,6 +103,17 @@
 			border-bottom: 1px solid #bbb;
 			border-top: none;
 			background: white;
+		}
+
+		#checkbox:checked::after{
+			opacity: 1;
+			position: absolute;
+			top: -4px;
+			right: 0;
+			content: "\f00c";
+   			font-family: FontAwesome;
+   			font-size: 20px;
+   			color: #dc425b;
 		}
 	</style>
 </head>
