@@ -41,10 +41,6 @@
 			max-width: 100%;
 		}
 
-		input[type="checkbox" i]{
-			border: 2px solid green;
-		}
-
 		button {
 			border: none;
 			background: #dc425b;
@@ -115,15 +111,20 @@
    			font-size: 20px;
    			color: #dc425b;
 		}
+
+		a {
+			color: inherit;
+			text-decoration: none;
+		}
 	</style>
 </head>
 <body>
 	<div class="main">
 		<div class="log-in">
-		<input class="input2-theme4" type="text" name="email" placeholder="email">
-		<input class="input2-theme4" type="password" name="password" placeholder="password">
-		<div class="checkbox-wrapper"><input id="checkbox" type="checkbox"><label for="checkbox">Yes, I'll donate everything I own</label></div>
-		<button>Sign up</button>
+			<input class="input2-theme4" type="text" name="email" placeholder="email">
+			<input class="input2-theme4" type="password" name="password" placeholder="password">
+			<div class="checkbox-wrapper"><input id="checkbox" type="checkbox"><label for="checkbox">Yes, I'll donate everything I own</label></div>
+			<button><a href="cardcheckout.html">Sign up</a></button>
 		</div>
 	</div>
 </body>

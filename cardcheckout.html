@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Credit card checkout</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		html, body {
+			height: 100%
+		}
+		body {
+			margin: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-family: 'Open Sans', monospace;
+			background: #f0f0f0;
+			flex-direction: column;
+		}
+
+		.credit-card {
+			box-sizing: border-box;
+			width: 500px;
+			height: 300px;
+			border-radius: 10px;
+			background: linear-gradient(90deg, #fff 70%, #f5f5f5 30%);
+			padding: 20px;
+			display: flex;
+			flex-direction: column;
+			box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+		}
+
+		.button {
+			text-decoration: none;
+			color: white;
+			background: #316aed;
+			padding: 10px 20px;
+			border-radius: 20px;
+			margin-top: 20px;
+		}
+
+		input {
+			font-size: inherit;
+			padding: 10px;
+			border: none;
+			margin-top: 20px;
+			font-family: inherit;
+			border-radius: 2px;
+			/*background: #eee;*/
+			border: 1px solid #ddd;
+		}
+
+		input::placeholder {
+		    color: #bbb;
+		    opacity: 1;
+		    text-transform: uppercase;
+		}
+
+		.input-small {
+			width: 50px;
+			margin-right: 5px;
+		}
+
+		.row {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.header {
+			background: #282831;
+			color: white;
+			margin: 10px -20px;
+			margin-bottom: 0;
+			padding: 10px;
+			font-size: 20px;
+			position: relative;
+			font-weight: 100;
+			padding-left: 20px;
+		}
+
+		.logo {
+			width: 37px;
+			height: auto;
+			position: absolute;
+			top: 11px;
+			right: 26px;
+		}
+
+		.surprise {
+			margin-top: 20px;
+			font-size: 10px;
+			color: #bbb;
+		}
+
+		.divider {
+			color: #bbb;
+			font-size: 28px;
+			margin-right: 5px;
+			font-weight: 300;
+			vertical-align: middle;
+		}
+
+		i {
+			margin-right: 5px;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="credit-card">
+		<span class="header">
+		<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+		Credit card checkout
+		</span>
+		<input type="text" name="card-number" placeholder="Card number">
+		<div class="row">
+		<div>
+		<input class="input-small" type="text" name="year" placeholder="YY" min="18" max="50" maxlength="2">
+		<span class="divider">/</span>
+		<input class="input-small" type="text" name="month" placeholder="MM" min="1" max="12" maxlength="2">
+		</div>
+		<div>
+		<input id="cvc" class="input-small" type="text" name="cvv" placeholder="CVC" maxlength="3">
+		</div>
+		</div>
+		<input type="text" name="name" placeholder="Cardholder name">
+	</div>
+	<a class="button" href="">Pay $65.5*</a>
+
+	<p class="surprise">*Surprise service fees may definately apply</p>
+</body>
+</html>
