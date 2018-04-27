@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>landing page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Open+San:400,800" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		html, body {
+			min-height: 100vh;
+		}
+		body {
+			height: 100%;
+			margin: 0;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			/*justify-content: center;*/
+			font-family: 'Open Sans', sans-serif;
+			background: linear-gradient(to right, #f7f7f7, #b1bec7);
+			background-image: url("img/sand.jpg");
+			background-size: cover;
+		}
+
+		h1 {
+			font-size: 150px;
+			font-family: 'Lato', cursive;
+			font-weight: 100;
+			margin: 0;
+			margin-top: 70px;
+			color: #1a3dff;
+		}
+
+		ul {
+			list-style: none;
+			font-size: 36px;
+			margin: 0;
+			padding: 20px;
+			display: flex;
+			justify-content: space-around;
+			/*border: 2px solid #222;*/
+		}
+
+		li {
+			margin-bottom: 10px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: 15px;
+		}
+
+		.subtitle {
+			font-size: 20px;
+			font-weight: 800;
+			text-transform: uppercase;
+			margin: 0;
+			margin-bottom: 70px;
+		}
+
+		.info {
+			position: relative;
+			padding: 30px;
+			background: white;
+			height: 300px;
+			width: 100%;
+			text-align: center;
+		}
+
+		i {
+			margin-bottom: 10px;
+		}
+
+		.icon-text {
+			font-size: 20px;
+		}
+
+		.grid {
+			flex: 1 1 50%;
+			display: flex;
+			flex-direction: column;
+			/*justify-content: center;*/
+			align-items: center;
+			height: 100vh;
+		}
+
+		.button {
+			padding: 12px 25px;
+			border: none;
+			background: black;
+			border-radius: 1px;
+			color: white;
+			text-decoration: none;
+			text-transform: uppercase;
+			font-weight: 400;
+			font-size: 14px;
+			margin-bottom: 180px;
+		}
+
+		.button:hover {
+			color: black;
+			background: white;
+			font-weight: bold;
+		}
+
+		.bubble-wrapper {
+			position: relative;
+			/*border: 2px solid green;*/
+			width: 50px;
+			height: 20px;
+			margin: auto;
+		}
+
+		.bubble {
+			border-radius: 50%;
+			/*border: 1px solid red;*/
+			width: 50px;
+			height: 50px;
+			position: absolute;
+			top: -55px;
+			font-size: 30px;
+			box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+			background: white;
+		}
+
+		.bubble i {
+			margin-top: 10px;
+			margin-left: -3px;
+		}
+
+		h2 {
+			color: #1a3dff;
+		}
+
+	</style>
+</head>
+<body>
+
+<h1>Sand</h1>
+<p class="subtitle">- Experience tiny rocks -</p>
+<a class="button" href="">Take me to sand land</a>
+
+
+<div class="info">
+<div class="bubble-wrapper">
+<div class="bubble">
+	<i class="fa fa-hand-o-up" aria-hidden="true"></i>
+</div>
+</div>
+<h2>There's so much sand out there</h2>
+<p>Have you tried counting it all?</p>
+</div>
+
+</body>
+</html>
