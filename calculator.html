@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>calculator</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+	* {
+		box-sizing: border-box;
+	}
+		html, body {
+			min-height: 100vh;
+		}
+		body {
+			height: 100%;
+			margin: 0;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			font-family: 'Share Tech Mono', monospace;
+			font-size: 20px;
+			background: linear-gradient(to right, #fff, #ededed);
+		}
+
+		.calculator {
+			/*border: 1px solid #222;*/
+			height: 400px;
+			width: 290px;
+			padding: 30px 15px;
+			border-radius: 5px;
+			border-bottom: 7px solid #222;
+			display: flex;
+			flex-direction: column;
+			box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+			background: #404040;
+			color: white;
+		}
+
+		.display {
+			height: 50px;
+			background: #f8f8f8;
+			border-top: 2px solid #888;
+			border-radius: 2px;
+			margin: 0px 5px 30px 5px;
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			padding: 10px;
+			font-size: 28px;
+			color: black;
+		}
+
+		.row {
+			display: flex;
+			flex: 1;
+			align-items: stretch;
+		}
+
+		.buttons {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			align-items: stretch;
+			align-self: stretch;
+		}
+
+		button {
+			flex: 1;
+			margin: 6px;
+			font-family: inherit;
+			font-size: inherit;
+			cursor: pointer;
+		}
+
+		button {
+			border-radius: 5px;
+			/*height: 45px;
+			width: 45px;*/
+			background: #555555;
+			color: white;
+			text-transform: uppercase;
+			border: 1px solid rgba(0,0,0,0);
+			box-sizing: border-box;
+			box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 2px 3px rgba(0,0,0,0.43);
+			border-bottom: 3px solid transparent;
+		}
+
+		button:active, button:focus {
+			outline: none;
+			box-shadow: none;
+			border: 1px solid rgba(0,0,0,0.33);
+		}
+
+		button:hover {
+			background: #666;
+		}
+
+		.plus {
+			background: #cc4444;
+			font-weight: bold;
+		}
+
+		.plus:hover {
+			background: #e25b5b;
+		}
+
+	</style>
+</head>
+<body>
+
+<div class="calculator">
+	<div id="js-display" class="display"></div>
+	<div class="buttons">
+		
+		<div class="row">
+			<button onclick="input(7)">7</button>
+			<button onclick="input(8)">8</button>
+			<button onclick="input(9)">9</button>
+			<button onclick="input('/')">÷</button>
+		</div>
+		<div class="row">
+			<button onclick="input(4)">4</button>
+			<button onclick="input(5)">5</button>
+			<button onclick="input(6)">6</button>
+			<button onclick="input('*')">×</button>
+		</div>
+		<div class="row">
+			<button onclick="input(1)">1</button>
+			<button onclick="input(2)">2</button>
+			<button onclick="input(3)">3</button>
+			<button onclick="input('-')">-</button>
+		</div>
+		<div class="row">
+			<button onclick="input(0)">0</button>
+			<button onclick="input('.')">•</button>
+			<button onclick="equals()">=</button>
+			<button onclick="input('+')" class="plus">+</button>
+		</div>
+	</div>
+</div>
+
+<script>
+	var display = document.getElementById("js-display");
+	
+	function play(num){
+		console.log(num);
+		if (num == '/' || num == '.' || num == '*') {
+			var audio = new Audio('sfx/_.mp3');
+			audio.play();
+		} else {
+			var audio = new Audio('sfx/' + num + '.mp3');
+			audio.play();
+		}
+	}
+
+
+	function input(num){
+		if (display.innerHTML.length > 14){
+			return
+		}
+		play(num);
+
+		display.innerHTML += num;
+	}
+
+	function equals(){
+		var input = display.innerHTML;
+		var result = eval(input);
+
+		result = result.toString().slice(0, 15);
+
+		for (var i = 0; i < result.length; i++) {
+			console.log("for");
+		  	play(result.charAt(i));
+		}
+
+		display.innerHTML = result;
+	}
+
+</script>
+
+</body>
+</html>
