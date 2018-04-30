@@ -162,23 +162,21 @@
 <script>
 	var display = document.getElementById("js-display");
 	
-	function play(num){
-		console.log(num);
-		if (num == '/' || num == '.' || num == '*') {
-			var audio = new Audio('sfx/_.mp3');
-			audio.play();
-		} else {
-			var audio = new Audio('sfx/' + num + '.mp3');
-			audio.play();
-		}
-	}
+	// function play(num){
+	// 	if (num == '/' || num == '.' || num == '*') {
+	// 		var audio = new Audio('sfx/_.mp3');
+	// 		audio.play();
+	// 	} else {
+	// 		var audio = new Audio('sfx/_.mp3');
+	// 		audio.play();
+	// 	}
+	// }
 
 
 	function input(num){
 		if (display.innerHTML.length > 14){
 			return
 		}
-		play(num);
 
 		display.innerHTML += num;
 	}
@@ -189,10 +187,9 @@
 
 		result = result.toString().slice(0, 15);
 
-		for (var i = 0; i < result.length; i++) {
-			console.log("for");
-		  	play(result.charAt(i));
-		}
+		// for (var i = 0; i < result.length; i++) {
+		//   	play(result.charAt(i));
+		// }
 
 		display.innerHTML = result;
 	}
