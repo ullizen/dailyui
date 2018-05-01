@@ -1,11 +1,218 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Daily ui challenge</title>
+	<link href="https://fonts.googleapis.com/css?family=Lato:100,400" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+	<link rel="stylesheet" href="calc.css">
+	<style>
+	body {
+		font-family: "Lato", sans-serif;
+	}
+		h1 {
+			font-family: "Lato", sans-serif;
+			font-weight: 100;
+			font-size: 60px;
+			color: white;
+			background: black;
+			padding: 10px 20px;
+			/*margin: 0;*/
+		}
+
+		h2 {
+			font-family: "Lato", sans-serif;
+			font-size: 20px;
+			margin: 20px;
+		}
+
+		.h2 {
+			text-align: center;
+			text-transform: uppercase;
+			margin: 50px 0;
+		}
+
+		.designs {
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+
+		.designs img {
+			max-width: 400px;
+			height: auto;
+		}
+
+		.challenge {
+			text-align: center;
+			margin: 5px;
+			flex: 1;
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			justify-content: center;
+			height: 100%;
+			padding: 50px 0;
+			border-top: 2px solid #ddd;
+		}
+
+		.number {
+			border-radius: 50%;
+			background: #eee;
+			color: black;
+			width: 45px;
+			height: 45px;
+			display: flex;
+			margin: auto;
+			align-items: center;
+			justify-content: center;
+			font-size: 20px;
+			/*font-weight: bold;*/
+		}
+	</style>
 </head>
 <body>
-<a href="signup.html">001 signup</a>
-<a href="cardcheckout.html">002 card checkout</a>
+<h1><b>Daily UI</b> challenge</h1>
+
+
+<div class="appicon2">
+	<svg viewBox="0 0 100 45">
+	<defs>
+    <linearGradient id="grad1" x1="0%" y1="30%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#61bbfa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2f70c6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+	<!-- <circle cx="50" cy="50" r="40" fill="white"/> -->
+	<circle cx="30" cy="10" r="5" fill="black"/>
+	<circle cx="70" cy="10" r="5" fill="black"/>
+	<path d="M47 25 L53 25" stroke="black" stroke-width="6" stroke-linecap="round"/>
+	<path transform="translate(63,21), scale(0.5,0.5)"  fill="url(#grad1)" stroke="none"
+        d="M15 3
+           Q16.5 6.8 25 18
+           A12.8 12.8 0 1 1 5 18
+           Q13.5 6.8 15 3z" />
+    <circle cx="72" cy="35" r="2.5" fill="#e8f8ff"/>
+	</svg>
+</div>
+
+<h2 class="h2">- designs -</h2>
+
+<article class="designs">
+	
+	<div class="challenge">
+		<div class="number">2</div>
+		<h2>Card checkout</h2>
+		<div class="smaller">
+		<div class="credit-card">
+		<span class="header">
+		<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+		Credit card checkout
+		</span>
+		<input type="text" name="card-number" placeholder="Card number">
+		<div class="row">
+		<div>
+		<input class="input-small" type="text" name="year" placeholder="YY" min="18" max="50" maxlength="2">
+		<span class="divider">/</span>
+		<input class="input-small" type="text" name="month" placeholder="MM" min="1" max="12" maxlength="2">
+		</div>
+		<div>
+		<input id="cvc" class="input-small" type="text" name="cvv" placeholder="CVC" maxlength="3">
+		</div>
+		</div>
+		<input type="text" name="name" placeholder="Cardholder name">
+	</div>
+	<a class="button" href="cardcheckout.html">Pay $65.5*</a>
+
+	<p class="surprise">*Surprise service fees may definately apply</p>
+	</div>
+	</div>
+
+	<div class="challenge">
+		<div class="number">4</div>
+		<h2>Calculator</h2>
+		<div class="calculator">
+	<div id="js-display" class="display"></div>
+	<div class="buttons">
+		
+		<div class="row">
+			<button onclick="input(7)">7</button>
+			<button onclick="input(8)">8</button>
+			<button onclick="input(9)">9</button>
+			<button onclick="input('/')">÷</button>
+		</div>
+		<div class="row">
+			<button onclick="input(4)">4</button>
+			<button onclick="input(5)">5</button>
+			<button onclick="input(6)">6</button>
+			<button onclick="input('*')">×</button>
+		</div>
+		<div class="row">
+			<button onclick="input(1)">1</button>
+			<button onclick="input(2)">2</button>
+			<button onclick="input(3)">3</button>
+			<button onclick="input('-')">-</button>
+		</div>
+		<div class="row">
+			<button onclick="input(0)">0</button>
+			<button onclick="input('.')">•</button>
+			<button onclick="equals()">=</button>
+			<button onclick="input('+')" class="plus">+</button>
+		</div>
+	</div>
+</div>
+	</div>
+	
+	<div class="challenge">
+		<div class="number">5</div>
+		<h2>App icon</h2>
+		<div class="appicon">
+			<svg viewBox="0 0 100 100">
+			<defs>
+		    <linearGradient id="grad1" x1="0%" y1="30%" x2="0%" y2="100%">
+		      <stop offset="0%" style="stop-color:#61bbfa;stop-opacity:1" />
+		      <stop offset="100%" style="stop-color:#2f70c6;stop-opacity:1" />
+		    </linearGradient>
+		  </defs>
+			<circle cx="50" cy="50" r="40" fill="white"/>
+			<circle cx="30" cy="45" r="5" fill="black"/>
+			<circle cx="70" cy="45" r="5" fill="black"/>
+			<path d="M47 55 L53 55" stroke="black" stroke-width="6" stroke-linecap="round"/>
+			<path transform="translate(63,51), scale(0.5,0.5)"  fill="url(#grad1)" stroke="none"
+		        d="M15 3
+		           Q16.5 6.8 25 18
+		           A12.8 12.8 0 1 1 5 18
+		           Q13.5 6.8 15 3z" />
+		    <circle cx="72" cy="65" r="2.5" fill="#e8f8ff"/>
+			</svg>
+		</div>
+	</div>
+</article>
+
+<script>
+	var display = document.getElementById("js-display");
+
+	function input(num){
+		if (display.innerHTML.length > 14){
+			return
+		}
+
+		display.innerHTML += num;
+	}
+
+	function equals(){
+		var input = display.innerHTML;
+		var result = eval(input);
+
+		result = result.toString().slice(0, 15);
+
+		display.innerHTML = result;
+	}
+
+</script>
+
 
 </body>
 </html>
