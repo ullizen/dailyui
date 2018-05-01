@@ -10,6 +10,7 @@
 	<style>
 	body {
 		font-family: "Lato", sans-serif;
+		margin: 0;
 	}
 		h1 {
 			font-family: "Lato", sans-serif;
@@ -18,7 +19,7 @@
 			color: white;
 			background: black;
 			padding: 10px 20px;
-			/*margin: 0;*/
+			margin: 0;
 		}
 
 		h2 {
@@ -31,6 +32,9 @@
 			text-align: center;
 			text-transform: uppercase;
 			margin: 50px 0;
+			background: #e3e3e3;
+			margin: 0;
+			padding: 20px;
 		}
 
 		.designs {
@@ -47,7 +51,7 @@
 
 		.challenge {
 			text-align: center;
-			margin: 5px;
+			/*margin: 5px;*/
 			flex: 1;
 			display: flex;
 			align-items: center;
@@ -55,7 +59,7 @@
 			justify-content: center;
 			height: 100%;
 			padding: 50px 0;
-			border-top: 2px solid #ddd;
+			/*border-top: 2px solid #ddd;*/
 		}
 
 		.number {
@@ -71,14 +75,54 @@
 			font-size: 20px;
 			/*font-weight: bold;*/
 		}
+
+		#teardrop {
+			opacity: 0;
+			animation: 2.3s drip infinite ease-out;
+		}
+
+		#teardrop2 {
+			opacity: 0;
+			animation: 2.3s drip2 infinite ease-out;
+		}
+
+		@keyframes drip{
+			0%{
+				opacity: 1;
+			}
+
+			50% {
+				opacity: 1;
+			}
+
+			100% {
+				opacity: 0;
+				transform: translateY(25px) translateX(63px) scale(0.5, 0.5);
+			}
+		}
+
+		@keyframes drip2{
+			0%{
+				opacity: 1;
+			}
+
+			50% {
+				opacity: 1;
+			}
+
+			100% {
+				opacity: 0;
+				transform: translateY(5px);
+			}
+		}
 	</style>
 </head>
 <body>
-<h1><b>Daily UI</b> challenge</h1>
+<h1><b>Daily UI</b> challenge 2018</h1>
 
 
 <div class="appicon2">
-	<svg viewBox="0 0 100 45">
+	<svg viewBox="0 0 100 50">
 	<defs>
     <linearGradient id="grad1" x1="0%" y1="30%" x2="0%" y2="100%">
       <stop offset="0%" style="stop-color:#61bbfa;stop-opacity:1" />
@@ -86,15 +130,15 @@
     </linearGradient>
   </defs>
 	<!-- <circle cx="50" cy="50" r="40" fill="white"/> -->
-	<circle cx="30" cy="10" r="5" fill="black"/>
-	<circle cx="70" cy="10" r="5" fill="black"/>
-	<path d="M47 25 L53 25" stroke="black" stroke-width="6" stroke-linecap="round"/>
-	<path transform="translate(63,21), scale(0.5,0.5)"  fill="url(#grad1)" stroke="none"
+	<circle cx="30" cy="15" r="5" fill="black"/>
+	<circle cx="70" cy="15" r="5" fill="black"/>
+	<path d="M47 30 L53 30" stroke="black" stroke-width="6" stroke-linecap="round"/>
+	<path id="teardrop" transform="translate(63,20), scale(0.5,0.5)"  fill="url(#grad1)" stroke="none"
         d="M15 3
            Q16.5 6.8 25 18
            A12.8 12.8 0 1 1 5 18
            Q13.5 6.8 15 3z" />
-    <circle cx="72" cy="35" r="2.5" fill="#e8f8ff"/>
+    <circle id="teardrop2" cx="72" cy="35" r="2.5" fill="#e8f8ff"/>
 	</svg>
 </div>
 
@@ -102,8 +146,8 @@
 
 <article class="designs">
 	
-	<div class="challenge">
-		<div class="number">2</div>
+	<div class="challenge" style="background: #f0f0f0;">
+		<div class="number" style="background: white">2</div>
 		<h2>Card checkout</h2>
 		<div class="smaller">
 		<div class="credit-card">
@@ -130,8 +174,8 @@
 	</div>
 	</div>
 
-	<div class="challenge">
-		<div class="number">4</div>
+	<div class="challenge" style="background: #dfebee">
+		<div class="number" style="background: #cc4444; color: white;">4</div>
 		<h2>Calculator</h2>
 		<div class="calculator">
 	<div id="js-display" class="display"></div>
