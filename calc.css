@@ -200,3 +200,125 @@ button:hover {
 		i {
 			margin-right: 5px;
 		}
+
+.profile {
+			font-family: "Lato", sans-serif;
+			background: white;
+			width: 300px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			border-radius: 2px;
+		}
+
+		.profile-header {
+			background: #ccc;
+			height: 130px;
+			width: 100%;
+			position: relative;
+			border-radius: 2px;
+			margin-bottom: 70px;
+			background-image: url("img/orange2.jpeg");
+			background-size: cover;
+		}
+
+		.profile-avatar {
+			border-radius: 50%;
+			height: 100px !important;
+			width: 100px;
+			object-fit: cover;
+			position: absolute;
+			left: 0; 
+			right: 0; 
+			margin-left: auto; 
+			margin-right: auto;
+			bottom: -50px;
+		}
+
+		.profile-name {
+			margin: 0;
+			font-size: 34px;
+		}
+
+		.profile-text {
+			margin: 0;
+		}
+
+		.profile-stats {
+			display: flex;
+			justify-content: space-around;
+			width: 90%;
+			padding: 15px 0;
+			padding-bottom: 5px;
+			color: #f0301a;
+			margin-top: 15px;
+			position: relative;
+		}
+
+		.profile-stat {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			
+		}
+		.profile-stats-line {
+			width: 100%;
+			height: 2px;
+			background: #f0301a;
+			position: absolute;
+			top: 33px;
+			z-index: 0;
+		}
+
+		.profile-stats .fa {
+			font-size: 20px;
+			color: #ad9a94;
+		}
+
+		.profile-stat p {
+			margin: 0;
+			margin-bottom: 10px;
+			font-weight: 700;
+			font-size: 28px;
+			letter-spacing: 2px;
+			background: white;
+			z-index: 1;
+			padding: 0 5px;
+		}
+
+		.bathtub {
+			padding: 10px 25px;
+			text-decoration: none;
+			color: inherit;
+			border: 1px solid #f0301a;
+			border-radius: 20px;
+			margin-bottom: 30px;
+			color: #f0301a;
+			text-transform: uppercase;
+			font-size: 14px;
+			transition: all 0.2s cubic-bezier(.25,.8,.25,1);
+		}
+
+		.bathtub:hover {
+			background: #f0301a;
+			color: white;
+		}
+
+		.profile-bio {
+			padding: 30px;
+			text-align: left;
+		}
+
+		.profile-bio h2 {
+			margin: 0;
+			font-size: 13px;
+			text-transform: uppercase;
+			font-weight: 900;
+			letter-spacing: 1.2px;
+			color: #222;
+		}
+
+		.profile-bio p {
+			margin: 0;
+			font-size: 16px;
+		}
