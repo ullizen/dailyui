@@ -8,6 +8,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="calc.css">
+	<link rel="stylesheet" href="settings.css">
+	<script type="text/javascript" src="settings.js"></script>
 	<style>
 		body {
 			font-family: "Lato", sans-serif;
@@ -145,7 +147,7 @@
 	</svg>
 </div>
 
-<h2 class="h2">- designs -</h2>
+<h2 class="h2">designs</h2>
 
 <article class="designs">
 	
@@ -275,6 +277,63 @@
 	
 </div>
 	</div>
+
+	<div id="body" class="challenge">
+		<div class="number" style="background: white">7</div>
+		<h2>Settings</h2>
+
+		<div class="app-wrapper">
+		<div id="app" class="settings-appicon">
+			<svg viewBox="0 0 100 100">
+			<defs>
+		    <linearGradient id="grad1" x1="0%" y1="30%" x2="0%" y2="100%">
+		      <stop offset="0%" style="stop-color:#61bbfa;stop-opacity:1" />
+		      <stop offset="100%" style="stop-color:#2f70c6;stop-opacity:1" />
+		    </linearGradient>
+		  </defs>
+			<circle cx="50" cy="50" r="40" fill="white"/>
+			<circle id="left-eye" cx="30" cy="45" r="5" fill="black"/>
+			<circle id="right-eye" cx="70" cy="45" r="5" fill="black"/>
+			<path id="mouth" d="M47 55 L53 55" stroke="black" stroke-width="6" stroke-linecap="round"/>
+			<path id="tear" transform="translate(63,51), scale(0.5,0.5)"  fill="url(#grad1)" stroke="none"
+		        d="M15 3
+		           Q16.5 6.8 25 18
+		           A12.8 12.8 0 1 1 5 18
+		           Q13.5 6.8 15 3z" />
+		    <circle id="tear-glow" cx="72" cy="65" r="2.5" fill="#e8f8ff"/>
+			</svg>
+		</div>
+		<div id="shadow" class="shadow"></div>
+	</div>
+
+		<div class="settings-wrapper">
+		<article class="settings">
+			<h1 class="settings-title">Settings</h1>
+			<div class="settings-buttons">
+				<button id="power-button" class="settings-button" onclick="poweronoff()"><i class="fa fa-power-off" aria-hidden="true"></i></button>
+			</div>
+
+			<div class="settings-buttons" >
+				<button class="settings-button" onclick="changecolor('#ffa1d3')" style="background: #ffa1d3;"></button>
+				
+				<button class="settings-button" onclick="changecolor('#a8ed95')" style="background: #a8ed95;"></button>
+				<button class="settings-button" onclick="changecolor('#b0e0fa')" style="background: #b0e0fa;"></button>
+			</div>
+
+			<div class="settings-buttons">
+				<button class="settings-button playstate" id="play-button" onclick="jump()" style="font-size: 16px;"><i class="fa fa-play" aria-hidden="true"></i></button>
+				<button class="settings-button playstate" id="pause-button" onclick="jump2()" style="font-size: 16px;"><i class="fa fa-pause" aria-hidden="true"></i></button>
+				<button class="settings-button playstate" id="stop-button" onclick="stop()" style="font-size: 15px;"><i class="fa fa-stop" aria-hidden="true"></i></button>
+			</div>
+
+			<div class="settings-buttons">
+				<button class="settings-button" onclick="random()" style="background: #ffef92;"><i class="fa fa-question" aria-hidden="true"></i></button>
+				<button class="settings-button" onclick="fixit()" style="background: #deceea;"><i class="fa fa-exclamation" aria-hidden="true"></i></button>
+				<button id="tear-button" class="settings-button" onclick="tear()" ><i class="fa fa-tint" aria-hidden="true"></i></button>
+			</div>
+		</article>
+		</div>
+</div>
 </article>
 
 <script>
