@@ -163,6 +163,10 @@
 			transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 		}
 
+		#left-eye, #right-eye, #mouth {
+			transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+		}
+
 	</style>
 </head>
 <body id="body">
@@ -316,13 +320,14 @@
 	function random() {
 		var x1 = Math.floor(Math.random() * 16) - 8;
 		var y1 = Math.floor(Math.random() * 16) - 8;
-		var x2 = Math.floor(Math.random() * 16) - 8;
-		var y2 = Math.floor(Math.random() * 16) - 8; 
-		var x3 = Math.floor(Math.random() * 16) - 8;
-		var y3 = Math.floor(Math.random() * 16) - 8; 
-		document.getElementById("left-eye").style.transform = "translate(" + x1 + "px," + y1 + "px)";
-		document.getElementById("right-eye").style.transform = "translate(" + x2 + "px," + y2 + "px)";
-		document.getElementById("mouth").style.transform = "translate(" + x3 + "px," + y3 + "px)";
+		var y2 = Math.floor(Math.random() * 16) - 4;
+		var xt = x1 + 63;
+		var yt = y1 + 51;
+		document.getElementById("left-eye").style.transform = "translate(" + -x1 + "px," + y1 + "px)";
+		document.getElementById("right-eye").style.transform = "translate(" + x1 + "px," + y1 + "px)";
+		document.getElementById("tear").style.transform = "translate(" + xt + "px," + yt + "px) scale(0.5, 0.5)";
+		document.getElementById("tear-glow").style.transform = "translate(" + x1 + "px," + y1 + "px)";
+		document.getElementById("mouth").style.transform = "translate(" + 0 + "px," + y2 + "px)";
 	}
 
 	function fixit() {
