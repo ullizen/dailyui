@@ -64,7 +64,11 @@
 			right: 0; 
 			margin-left: auto; 
 			margin-right: auto;
-			/*bottom: 0px;*/
+			bottom: 12px;
+		}
+
+		.settings-button.playstate .fa {
+			bottom: 14px;
 		}
 
 		.settings-buttons {
@@ -178,9 +182,9 @@
 	</div>
 
 	<div class="settings-buttons">
-		<button class="settings-button" id="play-button" onclick="jump()" style="font-size: 16px;"><i class="fa fa-play" aria-hidden="true"></i></button>
-		<button class="settings-button" id="pause-button" onclick="jump2()" style="font-size: 16px;"><i class="fa fa-pause" aria-hidden="true"></i></button>
-		<button class="settings-button" id="stop-button" onclick="stop()" style="font-size: 15px;"><i class="fa fa-stop" aria-hidden="true"></i></button>
+		<button class="settings-button playstate" id="play-button" onclick="jump()" style="font-size: 16px;"><i class="fa fa-play" aria-hidden="true"></i></button>
+		<button class="settings-button playstate" id="pause-button" onclick="jump2()" style="font-size: 16px;"><i class="fa fa-pause" aria-hidden="true"></i></button>
+		<button class="settings-button playstate" id="stop-button" onclick="stop()" style="font-size: 15px;"><i class="fa fa-stop" aria-hidden="true"></i></button>
 	</div>
 
 	<div class="settings-buttons">
