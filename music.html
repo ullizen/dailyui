@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>music player</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+	<style>
+		html, body {
+			min-height: 100vh;
+		}
+		body {
+			margin: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: #aaa; 
+			background: linear-gradient(15deg, #000f32, #0c4c92);
+		}
+
+		.music-player {
+			height: 380px;
+			display: flex;
+			border-radius: 2px;
+			font-family: "Lato", sans-serif;
+		}
+
+		.current-song {
+			box-sizing: border-box;
+			width: 270px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			padding: 15px 25px;
+			background: white;
+		}
+
+		.playlist {
+			width: 270px;
+			background: #08112e;
+			border-radius: 2px;
+			font-size: 14px;
+			color: white;
+			opacity: 0.8;
+		}
+
+		.playlist-title {
+			/*background: #203261;*/
+			margin: 0;
+			padding: 20px 15px;
+			color: white;
+			/*font-weight: 400;*/
+			padding-left: 33px;
+			text-transform: uppercase;
+			font-size: 12px;
+		}
+
+		.playlist-title .fa {
+			float: right;
+			margin-top: 3px;
+			margin-right: 4px;
+			font-size: 14px;
+		}
+
+		.playlist ol {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		.playlist li {
+			padding: 15px;
+			padding-left: 10px;
+			counter-increment: item;
+			border-top: 1px solid rgba(255,255,255,0.15);
+		}
+
+		.playlist li:before {
+		   margin-right: 5px;
+		   content: counter(item);
+		   /*background: #03001e;*/
+		   border-radius: 50%;
+		   /*color: white;*/
+		   width: 1.2em;
+		   padding: 2px;
+		   text-align: center;
+		   display: inline-block;
+		   font-size: 12px;
+		   font-weight: 600;
+		 }
+
+		.cd {
+			border-radius: 50%;
+			background: #ddd;
+			height: 170px;
+			width: 170px;
+			position: relative;
+			background: url("img/mike.jpeg");
+			background-size: cover;
+		}
+
+		.cd:after {
+			content: " ";
+			height: 30px;
+			width: 30px;
+			background: white;
+			border-radius: 50%;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+			position: absolute;
+
+		}
+
+		.player-controls {
+			display: flex;
+			align-items: center;
+		}
+
+		.player-controls .control {
+			opacity: 0.6;
+			margin: 0 20px;
+		}
+
+		.music-player-button {
+			border-radius: 50%;
+			background: white;
+			color: #222;
+			width: 35px;
+			height: 35px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 20px;
+			border: none;
+			transition: all 0.1s cubic-bezier(.25,.8,.25,1);
+			position: relative;
+			margin: 0 5px;
+		}
+
+		.music-player-button.play {
+			width: 45px;
+			height: 45px;
+			/*background: #e03030;
+			color: white;*/
+			font-size: 24px;
+			/*box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);*/
+		}
+
+		.music-player-button .fa {
+			position: absolute;
+			left: 0; 
+			right: 0; 
+			margin-left: auto; 
+			margin-right: auto;
+		}
+
+		.song-title {
+			margin: 0;
+			margin-top: 20px;
+		}
+
+		.song-artist {
+			margin: 0;
+			font-weight: 400;
+			opacity: 0.7;
+			margin-top: 5px;
+			font-size: 14px;
+		}
+
+		.song-progress {
+			width: 100%;
+			height: 3px;
+			background: #333;
+			margin: 30px 0;
+			margin-bottom: 10px;
+			position: relative;
+			background: linear-gradient(90deg, #0c4c92 75%, #ddd 30%)
+		}
+
+		.song-progress:after {
+			content: " ";
+			position: absolute;
+			right: 50px;
+			height: 12px;
+			width: 12px;
+			border-radius: 50%;
+			background: #0c4c92;
+			bottom: 0;
+			top: 0;
+			margin: auto;
+		}
+
+		.song-length {
+			font-size: 12px;
+			float: right;
+			opacity: 0.8;
+			font-weight: 400;
+		}
+
+		.time-left {
+			margin: 0;
+			margin-bottom: 10px;
+			font-size: 10px;
+			opacity: 0.8;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="music-player">
+		<div class="current-song">
+			<div class="cd"></div>
+			<h3 class="song-title">Never gonna give you up</h3>
+			<p class="song-artist">Rick Astley</p>
+			<div class="song-progress"></div>
+			<p class="time-left">2:58 / 3:32</p>
+			<nav class="player-controls">
+			<i class="control fa fa-volume-up" aria-hidden="true"></i>
+			<button class="music-player-button"><i class="fa fa-backward" aria-hidden="true" style="right: 5px;"></i></button>
+			<button class="music-player-button play"><i class="fa fa-pause" aria-hidden="true" style="left: 5px;"></i></button>
+			<button class="music-player-button"><i class="fa fa-forward" aria-hidden="true" style="left: 5px;"></i></button>
+			<i class="control fa fa-ellipsis-h" aria-hidden="true"></i>
+			</nav>
+		</div>
+		<div class="playlist">
+		<h4 class="playlist-title">Never gonna let you down <i class="fa fa-random" aria-hidden="true"></i></h4>
+			<ol>
+				<li>Never gonna run around <span class="song-length">3:32</span></li>
+				<li>And desert you <span class="song-length">3:32</span></li>
+				<li style="font-weight: 600;">Never gonna make you cry <span class="song-length">3:32</span></li>
+				<li>Never gonna say goodbye <span class="song-length">3:32</span></li>
+				<li>Never gonna tell a lie <span class="song-length">3:32</span></li>
+				<li>And hurt you <span class="song-length">3:32</span></li>
+			</ol>
+		</div>
+	</div>
+
+</body>
+</html>

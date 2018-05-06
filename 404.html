@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>404</title>
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<style>
+		html, body {
+			min-height: 100vh;
+		}
+		body {
+			margin: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: #fff;
+		}
+
+		.not-found {
+			display: flex;
+			align-items: center;
+			width: 100%;
+			font-family: "Lato", sans-serif;
+		}
+
+		.metro-line {
+			display: flex;
+			align-items: center;
+			position: relative;
+		}
+
+		.metro-line-line {
+			position: absolute;
+			height: 19px;
+			width: 100%;
+			background: #d94444;
+			z-index: -1;
+		}
+
+		.metro-line-line2 {
+			position: absolute;
+			height: 19px;
+			width: 53%;
+			background: #ddd;
+			z-index: -1;
+			transform: rotate(-42deg);
+			left: -150px;
+			bottom: -18px;
+		}
+
+		.metro-line-line3 {
+			position: absolute;
+			height: 19px;
+			width: 50%;
+			background: #ddd;
+			z-index: -1;
+			transform: rotate(90deg);
+			left: -5px;
+			top: -70px;
+		}
+
+		.station {
+			box-sizing: border-box;
+			background: white;
+			height: 80px;
+			width: 80px;
+			border-radius: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: #d94444;
+			margin: 20px;
+			border: 9px solid #d94444;
+			font-size: 24px;
+			font-weight: 900;
+		}
+
+		.station2 {
+			position: absolute;
+			top: -50px;
+			left: 60px;
+			border-color: #ddd;
+			color: #ddd;
+		}
+
+		.station--not-found {
+			box-sizing: border-box;
+			background: #d94444;
+			height: 280px;
+			width: 280px;
+			border-radius: 50%;
+			display: flex;
+			justify-content: center;
+			/*align-items: center;*/
+			padding-top: 60px;
+			color: white;
+			margin-left: 100px;
+			font-size: 120px;
+			font-weight: 400;
+			letter-spacing: 2px;
+			font-family: "Raleway", sans-serif;
+		}
+
+		.not-found-message {
+			margin-left: 150px;
+			margin-top: 40px;
+			font-size: 46px;
+			text-align: center;
+			font-weight: 400;
+			max-width: 500px;
+		}
+
+	</style>
+</head>
+<body>
+
+<div class="not-found">
+	<div class="metro-line">
+		<span class="metro-line-line"></span>
+		<span class="metro-line-line2"></span>
+		<span class="metro-line-line3"><div class="station station2">403</div></span>
+		<div class="station">200</div>
+		<div class="station">200</div>
+		<div class="station">200</div>
+		<div class="station--not-found">404</div>
+	</div>
+	<h1 class="not-found-message">You've reached <br> the end of this line</h1>
+</div>
+
+</body>
+</html>
