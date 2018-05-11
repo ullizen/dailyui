@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>share</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
+	<style>
+		html, body {
+			min-height: 100vh;
+		}
+
+		body {
+			margin: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-family: "Noto Serif", serif;
+		}
+
+		.share {
+			padding: 40px 50px;
+			box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+			position: relative;
+			max-width: 500px;
+			border: 1px solid #ddd;
+			border-radius: 2px;
+		}
+
+		.share-buttons {
+			position: absolute;
+			right: 30px;
+			bottom: -15px;
+			font-family: "Open Sans", sans-serif;
+			display: flex;
+			cursor: pointer;
+			box-shadow: 0 2px 4px rgba(0,0,0,0.26);
+		}
+
+		.share-buttons:hover .share-button:not(.expanded){
+			background: black;
+			color: white;
+		}
+
+		.share-buttons:hover {
+			color: white;
+		}
+
+		.share-button {
+			width: 20px;
+			height: 35px;
+			border: none;
+			/*box-shadow: 0 2px 4px rgba(0,0,0,0.26);*/
+			text-transform: uppercase;
+			background: #fff;
+			color: #000;
+			font-size: 18px;
+			transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+			margin: 0;
+			cursor: pointer;
+		}
+
+		.share-button:focus, .share-button:active {
+			outline: none;
+		}
+
+		.share-button .fa {
+			opacity: 0;
+		}
+
+		.share-button.expanded {
+			width: 35px;
+		}
+
+		.share-button.expanded:hover {
+			background: black;
+			color: white;
+		}
+
+		.share-button.expanded .fa{
+			opacity: 1;
+		}
+
+		.share-button--share {
+			background: none;
+			padding: 10px 20px;
+		}
+
+
+		.share p {
+			line-height: 1.6em;
+		}
+
+		.share p::first-letter {
+		  float: left;
+		  font-size: 88px;
+		  line-height: 60px;
+		  padding-top: 6px;
+		  padding-right: 8px;
+		  padding-left: 3px;
+		}
+
+		.share-text {
+			position: absolute;
+			top: 7px;
+			left: 20px;
+			text-transform: uppercase;
+			font-size: 14px;
+		}
+	</style>
+</head>
+<body>
+
+<div class="share">
+	<p>It’s easy to forget that we’re constantly moving forward. The very earth that we’re standing on is orbiting around the sun at an incredibly whooping speed. Surprisingly, one lap around the sun takes exactly one year! Incredible facts like these make you think that someone, somewhere, is making this all up.
+
+<br>
+<br>
+Just as the earth is soaring through space, the train of time is also moving forward. It’s amazing to think that, even though we might be separated in space, we’re all travelers on the same train, running on predestined tracks and heading straight towards hell.
+</p>
+
+	<div onclick="toggleShare()" class="share-buttons">
+	<button class="share-button"><i class="fa fa-twitter" aria-hidden="true"></i></button>
+	<button class="share-button"><i class="fa fa-facebook" aria-hidden="true"></i></button>
+	<button class="share-button"><i class="fa fa-instagram" aria-hidden="true"></i></button>
+	<button class="share-button"><i class="fa fa-pinterest-p" aria-hidden="true"></i></button>
+	<span id="share-text" class="share-text">share</span>
+	</div>
+</div>
+
+<script>
+	var expanded = false;
+	function toggleShare(){
+		var els = document.getElementsByClassName('share-button');
+		var text = document.getElementById('share-text');
+		
+		if (expanded){
+			for(var i = 0; i < els.length; i++){
+		    	els[i].classList.remove("expanded");
+		    	text.style.visibility = "visible";
+  			}
+
+		} else {
+			for(var i = 0; i < els.length; i++){
+		    	els[i].classList.add("expanded");
+		    	text.style.visibility = "hidden";
+  			}
+		}
+
+		expanded = !expanded;
+	}
+</script>
+
+</body>
+</html>

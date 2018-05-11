@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>success fail</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,600" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+	<style>
+		html, body {
+			min-height: 100vh;
+		}
+
+		body {
+			margin: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-family: "Lato", sans-serif;
+			background: #f0f7fd;
+		}
+
+		.message-card {
+			height: 300px;
+			width: 300px;
+			margin: 20px;
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			box-shadow: 0 2px 4px rgba(0,0,0,0.1), 0 2px 3px rgba(0,0,0,0.1);
+			border-radius: 2px;
+		}
+
+		.message-card h1, .message-card p {
+			margin: 0;
+			margin-bottom: 5px;
+		}
+
+		.message-image {
+			box-sizing: border-box;
+			border: 10px solid white;
+			padding-top: 10px;
+			flex-basis: 50%;
+			width: 100%;
+			background: #fff;
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 80px;
+			font-family: 'Comfortaa', cursive;
+			color: #565656;
+		}
+
+		.message-text {
+			box-sizing: border-box;
+			padding-top: 5px;
+			display: flex;
+			flex-direction: column;
+			flex-basis: 50%;
+			align-items: center;
+			background: white;
+			width: 100%;
+		}
+
+		.message-card button {
+			border: none;
+			border-radius: 20px;
+			padding: 8px 30px;
+			text-transform: uppercase;
+			color: white;
+			font-weight: bold;
+			margin-top: 25px;
+		}
+
+		.success .message-image{
+			background: #e5f9e8;
+		}
+
+		.fail .message-image{
+			background: #ffdede;
+		}
+
+		.success button {
+			background: #34cd83;
+		}
+
+		.fail button {
+			background: #f95555;
+		}
+	</style>
+</head>
+<body>
+
+<div class="message-card success">
+	<div class="message-image">
+		:D
+	</div>
+	<div class="message-text">
+	<h1>Done!</h1>
+	<p>Now, let's move on to the next step.</p>
+	<button>next</button>
+	</div>
+</div>
+
+<div class="message-card fail">
+	<div class="message-image">
+		:/
+	</div>
+	<div class="message-text">
+	<h1>Oops...</h1>
+	<p>Well, that didn't go as expected.</p>
+	<button>try again</button>
+	</div>
+</div>
+
+</body>
+</html>
