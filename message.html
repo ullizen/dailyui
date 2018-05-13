@@ -25,7 +25,7 @@
 			max-width: 400px;
 			height: 500px;
 			background: #ddd;
-			padding: 15px;
+			padding: 10px;
 			padding-top: 0;
 			display: flex;
 			flex-direction: column;
@@ -78,7 +78,7 @@
 		}
 
 		.messaging-chat {
-			padding: 10px 20px;
+			padding: 5px 10px;
 			border: 2px solid black;
 			border-bottom: 2px solid #eee;
 			border-right: 2px solid #eee;
@@ -91,10 +91,10 @@
 
 		.messaging-toolbar {
 			font-size: 18px;
-			padding: 10px 25px;
+			padding: 15px 10px;
 			border-bottom: 1px solid white;
 			position: relative;
-			margin: 0 -25px;
+			margin: 0 -10px;
 			display: flex;
 			justify-content: space-between;
 		}
@@ -111,10 +111,15 @@
 
 		.username {
 			font-weight: bold;
+			/*color: blue;*/
 		}
 
 		.messaging-chat p {
 			margin: 15px 0;
+		}
+
+		.username.me {
+			/*color: red;*/
 		}
 	</style>
 </head>
@@ -123,13 +128,15 @@
 <div class="messaging">
 	<header class="messaging-toolbar"><i class="fa fa-home" aria-hidden="true"></i> Contacts Settings</header>
 	<div class="messaging-chat">
-		<p><span class="username">me: </span>Hey, why you never answer me? 😭 </p>
+		<p><span class="username me">me: </span>Hi 😃</p>
+		<p><span class="username me">me: </span>Hello...?</p>
+		<p><span class="username me">me: </span>Hey, why you never answer me? 😭 </p>
 		<p><span class="username">Amanda: </span> I've been busy</p>
-		<p><span class="username">me: </span>Ok... but what are you doing this weekend? 😍</p>
+		<p><span class="username me">me: </span>Ok... but what are you doing this weekend? 😍</p>
 		<p><span class="username">Amanda: </span> Not much</p>
-		<p><span class="username">me: </span>Wanna meet up? 😘 😜</p>
+		<p><span class="username me">me: </span>Wanna meet up? 😘 😜</p>
 		<p><span class="username">Amanda: </span> Naaah I'm busy</p>
-		<p><span class="username">me: </span>😭 😭 😭 </p>
+		<p><span class="username me">me: </span>😭 😭 😭 </p>
 	</div>
 	<div class="flex-row">
 		<input class="messaging-input" type="text" name="">
