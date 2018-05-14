@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>countdown</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,600" rel="stylesheet">
+	<style>
+		html, body {
+			min-height: 100vh;
+		}
+
+		body {
+			margin: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-family: "lato", sans-serif;
+			background: linear-gradient(to left, #ccd8e3, #e9e4f0);
+		}
+
+		.countdown {
+			width: 250px;
+			min-height: 200px;
+			text-align: center;
+			padding: 20px;
+			background: rgba(255,255,255,0.3);
+			box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+		}
+
+		.countdown h1 {
+			padding: 10px 20px;
+			margin: -20px;
+			margin-bottom: 20px;
+			font-size: 16px;
+			color: #676c6f;
+			background: rgba(255,255,255,0.4);
+			font-weight: 600;
+			text-transform: uppercase;
+		}
+
+		#day-container {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+
+		.day {
+			box-sizing: border-box;
+			height: 30px;
+			width: 30px;
+			background: rgba(255, 255, 255, 0.86);
+			margin: 2px;
+			flex: 0 1 auto;
+			border-radius: 2px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			color: white;
+			font-weight: bold;
+			box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+			transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+			position: relative;
+		}
+
+		.day:hover {
+			box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+			background: rgba(255, 60, 93, 1);
+		}
+
+		.day--1 {
+			margin-left: 2px;
+		}
+
+		.day--2 {
+			margin-left: 36px;
+		}
+
+		.day--3 {
+			margin-left: 70px;
+		}
+
+		.day--4 {
+			margin-left: 125px;
+		}
+
+		.day--5 {
+			margin-left: 138px;
+		}
+
+		.day--6 {
+			margin-left: 205px;
+		}
+
+		.day--0 {
+			margin-left: 206px;
+		}
+
+
+		.month {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.day-number {
+			opacity: 0;
+			transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+		}
+
+		.day:hover .day-number {
+			opacity: 1;
+		}
+
+		.day--last{
+			border-radius: 50%;
+			border: 4px solid rgba(255, 60, 93, 1);
+		}
+
+		.day--last:after{
+			content: ' ';
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+			position: absolute;
+			border-radius: 50%;
+			background: rgba(255, 60, 93, 1);
+			height: 10px;
+			width: 10px;
+		}
+
+		.day--last:hover.day--last:after {
+			opacity: 0;
+		}
+	</style>
+</head>
+<body>
+
+<div class="countdown">
+	<h1>Holiday countdown</h1>
+	<div id="day-container"></div>
+</div>
+
+<script>
+	function renderDays(endDate){
+		var oneDay = 24*60*60*1000;
+		var firstDate = new Date();
+		var secondDate = endDate;
+
+		// var diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
+
+		var dates = [];
+		 while( firstDate < secondDate ){
+		   firstDate.setDate(firstDate.getDate() + 1);
+		   dates.push(new Date(firstDate));
+		 }
+
+		var dayContainer = document.getElementById("day-container");
+		var html = "";
+
+		// for (i = 0; i < diffDays; i++) {
+		// 	html = html.concat("<div class='day'></div>");
+		// }
+
+		for (i = 0; i < dates.length; i++) {
+			var day = "";
+
+			if (i == 0) {
+				html = html.concat("<div class='month'>");
+				day = "day--" + dates[i].getDay();
+			} else if (dates[i].getDate() == 1) {
+				html = html.concat("</div><div class='month'>");
+				var day = "day--";
+				day = "day--" + dates[i].getDay();
+			} else if(i == dates.length -1){
+				var day = "day--last";
+				// html = html.concat("</div>");
+			}
+			html = html.concat("<div class='day " + day + "'><span class='day-number'>" + dates[i].getDate() + "</span></div>");
+		}
+
+		dayContainer.innerHTML = html;
+
+	}
+
+	renderDays(new Date(2018,06,07));
+</script>
+
+</body>
+</html>
