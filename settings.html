@@ -121,7 +121,7 @@
 			border-radius: 50%;
 			width: 90px;
 			margin: 0 30px;
-			margin-top: -17px;
+			margin-top: -25px;
 			opacity: 0;
 			transition: all 0.8s cubic-bezier(.25,.8,.25,1);
 		}
@@ -165,6 +165,42 @@
 
 		#left-eye, #right-eye, #mouth {
 			transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+		}
+
+		@keyframes bounce {
+			0%, 2%, 98%, 100% {
+				transform: translate(0px, 0px) scale(1.18, 0.86);
+			}
+
+			12%, 88% {
+				transform: translate(0px, -25px) scale(0.86, 1.18);
+			}
+
+			36%, 65% {
+				transform: translate(0px, -90px) scale(0.98, 1.02);
+			}
+
+			50% {
+				transform: translate(0px, -100px) scale(1, 1);
+			}
+		}
+
+		@keyframes shrink2 {
+			0%, 2%, 98%, 100% {
+			transform: scale(1, 1);
+			}
+
+			12%, 88% {
+				transform: scale(0.70, 1);
+			}
+
+			36%, 65% {
+				transform: scale(0.55, 1);
+			}
+
+			50% {
+				transform: scale(0.55, 1);
+			}
 		}
 
 	</style>
@@ -249,8 +285,8 @@
 		if (!poweron) {
 			return;
 		}
-		document.getElementById("app").style.animation = "jump 1.8s cubic-bezier(0, 0.47, 0.32, 1.5) infinite";
-		document.getElementById("shadow").style.animation = "shrink 1.8s cubic-bezier(0, 0.47, 0.32, 1.5) infinite";
+		document.getElementById("app").style.animation = "bounce 0.8s cubic-bezier(0, 0.1, 1, 0.9) infinite";
+		document.getElementById("shadow").style.animation = "shrink2 0.8s cubic-bezier(0, 0.4, 1, 1) infinite";
 
 		togglebuttons();
 		document.getElementById("play-button").style.background = "rgb(100, 100, 100)";
